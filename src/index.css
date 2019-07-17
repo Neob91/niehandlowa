@@ -1,59 +1,62 @@
 body {
     margin: 0;
     padding: 0;
+    color: #ffffff;
     font-family: 'Roboto', sans-serif;
-    font-size: 24px;
+    font-size: 32px;
+    line-height: 1.2;
     background-color: #333;
 }
 
 .current {
-    padding: 80px 24px;
-    color: #ffffff;
+    padding: 3em 24px;
     background-color: #00a000;
-    text-align: center;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .current.stores-closed {
     background-color: #a00000;
 }
 
-.current > div {
-    flex-grow: 1;
-}
-
-.current > .text-2 {
-    margin: 0 20px;
-    font-size: 5em;
-    flex-grow: 3;
-}
-
 .future {
-    padding: 80px 0 0;
+    padding: 3em 8px 0;
     text-align: center;
-    font-size: 1.3em;
-    color: #ffffff;
+    font-size: 1.4em;
     border-top: 2px solid #ffffff;
 }
 
 .future > .text-1 {
-    margin: 0 0 20px 0;
+    margin: 0 0 30px 0;
+    font-size: 1.2em;
 }
- 
-@media screen and (max-width: 767px) {
+
+.future > .text-2 {
+    font-size: 1em;
+}
+
+@media screen and (max-width: 450px) {
     body {
-        font-size: 20px;
+        font-size: 10px;
     }
+}
 
-    .current > .text-2 {
-        margin: 40px 0;
-        font-size: 4em;
+@media screen and (min-width: 451px) and (max-width: 600px) {
+    body {
+        font-size: 14px;
     }
+}
 
-    .current {
-        flex-direction: column;
+@media screen and (min-width: 601px) and (max-width: 800px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1200px) {
+    body {
+        font-size: 21px;
     }
 }

@@ -10,24 +10,16 @@ const storesOpenSundays = [
 ];
 
 window.addEventListener('DOMContentLoaded', () => {
-    const [currentSunday, isTodaySunday] = getCurrentSunday();
+    const currentSunday = getCurrentSunday();
     const isCurrentSundayOpen = storesOpenSundays.indexOf(getDateString(currentSunday)) !== -1;
     const futureOpenSundays = getFutureSundaysWithOpenStores();
     const currentElem = document.querySelector('.current');
 
-    currentElem.querySelector('.text-1').innerText = (
-        isTodaySunday ?
-            'Czy dzisiaj jest niedziela handlowa?' :
-            'Czy najbliższa niedziela jest handlowa?'
-    );
-
-    currentElem.querySelector('.text-2').innerText = isCurrentSundayOpen ? 'TAK! :-)' : 'NIE ;-(';
-
-    currentElem.querySelector('.text-3').innerText = (
-        `${getDateDisplay(currentSunday)} ${isCurrentSundayOpen ? '' : 'nie '}jest niedzielą handlową.`
-    );
-
     currentElem.classList.toggle('stores-closed', !isCurrentSundayOpen);
+    currentElem.innerText = (
+        `Niedziela ${isCurrentSundayOpen ? 'handlowa' : 'niehandlowa'}`
+    );
+
     document.querySelector('.future > .text-1').innerText = (
         isCurrentSundayOpen ?
             'Kolejne niedziele handlowe' :
@@ -45,14 +37,13 @@ const getCurrentSunday = () => {
         d.setDate(d.getDate() + 7 - weekday);
     }
 
-    return [d, isTodaySunday];
+    return d;
 };
 
 const getFutureSundaysWithOpenStores = () => {
-    const sunday = getDateString(getCurrentSunday()[0]);
+    const sunday = getDateString(getCurrentSunday());
     return storesOpenSundays.filter(d => d > sunday).map(d => new Date(d));
 };
 
-const getTodayDateString = () => getDateString(new Date());
 const getDateString = d => d.toISOString().split('T')[0];
 const getDateDisplay = d => d.toLocaleDateString('pl-PL');
