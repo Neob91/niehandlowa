@@ -53,4 +53,9 @@ const getFutureSundaysWithOpenStores = () => {
 };
 
 const getDateString = d => d.toISOString().split('T')[0];
-const getDateDisplay = d => d.toLocaleDateString('pl-PL');
+const getDateDisplay = d => zeroPad(d.getDate()) + '.' + zeroPad(d.getMonth() + 1) + '<span class="date-year">.' + d.getFullYear() + '</span>';
+
+const zeroPad = n => {
+    const padding = n < 10 ? '0' : '';
+    return padding + n;
+};

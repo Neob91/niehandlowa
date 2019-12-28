@@ -37,6 +37,10 @@ body {
     font-size: 1em;
 }
 
+.future .date-year {
+    color: #888;
+}
+
 @media screen and (max-width: 450px) {
     body {
         font-size: 10px;
