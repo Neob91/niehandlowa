@@ -6,7 +6,7 @@ export const appStyle = css`
   height: 100%;
 
   color: #eee;
-  background-color: #663a3a;
+  background-color: #222;
 
   font-size: 17px;
   font-family: 'Open Sans', Arial, Tahoma, sans-serif;
@@ -17,7 +17,7 @@ export const appStyle = css`
     position: relative;
 
     box-sizing: border-box;
-    padding: 120px 80px 40px;
+    padding: 120px 80px 80px;
     margin: auto;
     width: 800px;
 
@@ -32,6 +32,7 @@ export const appStyle = css`
     & > div {
       padding: 50px 20px 20px;
       width: 100%;
+      height: 100%;
       border-width: 2px;
     }
   }

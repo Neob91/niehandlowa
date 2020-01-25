@@ -2,7 +2,7 @@ import React from 'react';
 import { cx } from 'emotion';
 import { getNextSunday, isCommerceAllowed, isTodaySunday } from 'niedziele';
 
-import { FutureSundays, Logo, Section, ThisWeekSummary, TodaySummary } from '@/components';
+import { FutureSundays, Logo, Section, Signature, ThisWeekSummary, TodaySummary } from '@/components';
 import { appStyle, appGreenStyle } from './style';
 
 export const App = () => {
@@ -19,6 +19,7 @@ export const App = () => {
     <div className={className}>
       <div>
         <Logo />
+        <Signature />
         <Section>
           {sundayToday ?
             <TodaySummary commerceAllowed={commerceAllowed} /> :
