@@ -1,0 +1,36 @@
+{
+  "name": "niehandlowa",
+  "version": "1.0.0",
+  "description": "Web app displaying whether stores are open on the coming Sunday or not",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "NODE_ENV=development webpack-dev-server --config webpack.config.js",
+    "build": "webpack --config ./webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neob91/niehandlowa.git"
+  },
+  "author": "Andrzej Bartosiński",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Neob91/niehandlowa/issues"
+  },
+  "homepage": "https://github.com/Neob91/niehandlowa#readme",
+  "devDependencies": {
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.2"
+  },
+  "dependencies": {
+    "emotion": "^10.0.27",
+    "niedziele": "^2.1.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
