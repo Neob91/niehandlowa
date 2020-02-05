@@ -42,7 +42,7 @@ export const getTimeUntilDateDisplay = (d: Date): string => {
     return 'w przyszłym tygodniu';
   }
 
-  if (weeks % 10 === 2 && weeks !== 12) {
+  if([2, 3, 4].some(x => weeks % 10 === x && weeks !== 10 + x)) {
     return `za ${weeks} tygodnie`;
   }
 
