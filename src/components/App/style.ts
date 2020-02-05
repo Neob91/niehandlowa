@@ -8,7 +8,7 @@ export const appStyle = css`
   color: #eee;
   background-color: #222;
 
-  font-size: 17px;
+  font-size: 18px;
   font-family: 'Open Sans', Arial, Tahoma, sans-serif;
   font-variant: small-caps;
   letter-spacing: 2px;
@@ -27,7 +27,7 @@ export const appStyle = css`
 
   @media screen and (max-width: 800px) {
     padding: 0;
-    font-size: 12px;
+    font-size: 14px;
 
     & > div {
       padding: 50px 20px 20px;

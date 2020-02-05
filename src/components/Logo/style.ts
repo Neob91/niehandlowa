@@ -3,7 +3,7 @@ import { css } from 'emotion';
 export const logoStyle = css`
   position: absolute;
   left: 24px;
-  top: 24px;
+  top: 14px;
 
   color: #ddd;
   font-size: 32px;
@@ -11,9 +11,9 @@ export const logoStyle = css`
   letter-spacing: 6px;
 
   @media screen and (max-width: 800px) {
-    left: 8px;
-    top: 8px;
-    font-size: 12px;
+    left: 16px;
+    top: 10px;
+    font-size: 16px;
     letter-spacing: 1px;
   }
 `;
