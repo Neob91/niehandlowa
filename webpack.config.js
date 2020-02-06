@@ -27,6 +27,11 @@ const config = {
               minimize: !isDevelopment
           }
         }]
+      },
+      {
+        test: /\.svg$/,
+        loader: 'file-loader',
+        exclude: /node_modules/
       }
     ]
   },
@@ -41,10 +46,7 @@ const config = {
       template: './src/index.html',
       filename: './index.html'
     })
-  ],
-  watchOptions: {
-    poll: 100
-  }
+  ]
 };
 
 module.exports = config;

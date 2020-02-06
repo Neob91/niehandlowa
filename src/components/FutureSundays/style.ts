@@ -1,19 +1,16 @@
 import { css } from 'emotion';
 
-export const futureStyle = css``;
-export const futureItemsStyle = css`
-  margin: 16px 0 0;
-  font-size: 14px;
-
-  & > div {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #333;
-    padding: 4px;
-    margin: 8px 0 0;
+export const futureStyle = css`
+  & > div:first-child {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0 0 36px;
   }
 
-  @media screen and (max-width: 800px) {
-    font-size: 12px;
+  @media (max-width: 900px) {
+    & > div:first-child {
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
   }
 `;

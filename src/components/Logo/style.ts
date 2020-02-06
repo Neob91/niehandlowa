@@ -1,19 +1,13 @@
 import { css } from 'emotion';
 
-export const logoStyle = css`
-  position: absolute;
-  left: 24px;
-  top: 14px;
+export const topStyle = theme => css`
+  margin: 0 0 0 1px;
 
-  color: #ddd;
-  font-size: 32px;
-  font-variant: small-caps;
-  letter-spacing: 6px;
+  height: 20px;
+  width: 204px;
 
-  @media screen and (max-width: 800px) {
-    left: 16px;
-    top: 10px;
-    font-size: 16px;
-    letter-spacing: 1px;
-  }
+  background-image: url(${theme.assets.logo});
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
 `;

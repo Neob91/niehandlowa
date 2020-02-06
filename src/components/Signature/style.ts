@@ -1,24 +1,25 @@
 import { css } from 'emotion';
 
-export const signatureStyle = css`
-  position: absolute;
-  left: 80px;
-  bottom: 16px;
+export const signatureStyle = theme => css`
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: right;
+  opacity: 0.5;
 
-  color: #666;
-  font-size: 10px;
-  text-align: center;
-
-  & > a {
+  a {
     text-decoration: none;
-    color: #999;
+    color: inherit;
 
     &:hover {
-      color: #1177bb;
+      color: ${theme.colors.linkHover};
+      text-decoration: underline;
     }
   }
 
-  @media screen and (max-width: 800px) {
-    left: 20px;
+  @media (max-width: 900px) {
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
   }
 `;

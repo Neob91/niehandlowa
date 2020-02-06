@@ -2,33 +2,38 @@ import React from 'react';
 import { cx } from 'emotion';
 import { getNextSunday, isCommerceAllowed, isTodaySunday } from 'niedziele';
 
-import { FutureSundays, Logo, Section, Signature, ThisWeekSummary, TodaySummary } from '@/components';
-import { appStyle, appGreenStyle } from './style';
+import { FutureSundays, Logo, ThemeSwitch, Heading, Signature } from '@/components';
+import { useThemeToggle } from '@/hooks';
+import { Theme, getTheme } from '@/themes';
+import { appStyle } from './style';
+
+const themes = [Theme.Light, Theme.Dark];
 
 export const App = () => {
+  const [themeName, toggleTheme] = useThemeToggle(themes);
   const sundayToday = isTodaySunday();
   const sunday = sundayToday ? new Date() : getNextSunday(new Date());
   const commerceAllowed = isCommerceAllowed(sunday);
-  let className = appStyle;
-
-  if (commerceAllowed) {
-    className = cx(className, appGreenStyle);
-  }
+  const theme = getTheme(themeName);
 
   return (
-    <div className={className}>
+    <div className={appStyle(theme)}>
       <div>
-        <Logo />
-        <Signature />
-        <Section>
-          {sundayToday ?
-            <TodaySummary commerceAllowed={commerceAllowed} /> :
-            <ThisWeekSummary commerceAllowed={commerceAllowed} />}
-        </Section>
-        <Section>
-          <FutureSundays />
-        </Section>
+        <Logo theme={theme} />
+        <ThemeSwitch theme={theme} onThemeToggle={toggleTheme} />
       </div>
+      <div />
+      <div>
+        <Heading commerceAllowed={commerceAllowed} isSunday={sundayToday} />
+      </div>
+      <div />
+      <div>
+        <FutureSundays />
+      </div>
+      <div>
+        <Signature theme={theme} />
+      </div>
+      <div />
     </div>
   );
 };

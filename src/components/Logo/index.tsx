@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { logoStyle } from './style';
+import { topStyle } from './style';
 
-export const Logo = () => (
-  <div className={logoStyle}>
-    niehandlowa.pl
-  </div>
-);
+interface Props {
+  theme: any;
+}
+
+export const Logo: React.FC<Props> = ({ theme }) => <div className={topStyle(theme)} />;

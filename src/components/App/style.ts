@@ -1,47 +1,74 @@
 import { css } from 'emotion';
 
-export const appStyle = css`
-  box-sizing: border-box;
-  padding: 100px 0 0;
-  height: 100%;
+export const appStyle = theme => css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+  padding: 0 44px;
 
-  color: #eee;
-  background-color: #222;
-
-  font-size: 18px;
-  font-family: 'Open Sans', Arial, Tahoma, sans-serif;
-  font-variant: small-caps;
-  letter-spacing: 2px;
+  color: ${theme.colors.text};
+  background-color: ${theme.colors.background};
+  font-family: 'Source Sans Pro', sans-serif;
+  transition: background-color 0.2s ease-in-out, 0.75s color ease-in-out;
 
   & > div {
-    position: relative;
-
-    box-sizing: border-box;
-    padding: 120px 80px 80px;
-    margin: auto;
-    width: 800px;
-
-    background-color: #0a0a0a;
-    border: 1px solid #ff0000;
+    width: 100%;
+    max-width: 1016px;
   }
 
-  @media screen and (max-width: 800px) {
+  & > div:first-child {
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex: 4 0 89px;
+    max-height: 166px;
+  }
+
+  & > div:nth-child(2) {
+    flex: 4 0 11px;
+    max-height: 21px;
+  }
+
+  & > div:nth-child(4) {
+    flex: 4 0 60px;
+    max-height: 147px;
+  }
+
+  & > div:nth-child(6) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    flex: 4 0 100px;
+  }
+
+  & > div:last-child {
+    flex: 3 0 30px;
+    max-height: 102px;
+  }
+
+  @media (max-width: 900px) {
     padding: 0;
-    font-size: 14px;
 
     & > div {
-      padding: 50px 20px 20px;
       width: 100%;
-      height: 100%;
-      border-width: 2px;
+      flex-grow: 0;
     }
-  }
-`;
 
-export const appGreenStyle = css`
-  background-color: #3a663a;
+    & > div:first-child, & > div:nth-child(5) {
+      width: calc(100% - 88px);
+    }
 
-  & > div {
-    border: 1px solid #00ff00;
+    & > div:nth-child(3) {
+      max-height: 140px;
+    }
+
+    & > div:last-child {
+      flex-basis: 120px;
+    }
   }
 `;

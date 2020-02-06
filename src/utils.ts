@@ -14,12 +14,11 @@ const months = [
 ];
 
 export const getDateDisplay = (d: Date): string => `${d.getDate()} ${months[d.getMonth()]}`;
-export const getTimeUntilDateDisplay = (d: Date): string => {
-  const days = Math.ceil((d.getTime() - +new Date()) / (1000 * 3600 * 24));
+export const getDaysOffsetDisplay = (days: number): string => {
   const weeks = Math.floor(days / 7);
 
   if (days < 0) {
-    return null;
+    return 'minęła';
   }
 
   if (days === 0) {
@@ -47,4 +46,10 @@ export const getTimeUntilDateDisplay = (d: Date): string => {
   }
 
   return `za ${weeks} tygodni`;
+};
+
+export const getDaysOffset = (d: Date): number => {
+  const days1 = Math.floor(d.getTime() / (24 * 3600 * 1000));
+  const days2 = Math.floor(new Date().getTime() / (24 * 3600 * 1000));
+  return days1 - days2;
 };
