@@ -1,6 +1,8 @@
 import { css } from 'emotion';
 
 export const signatureStyle = theme => css`
+  position: relative;
+
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
@@ -21,5 +23,17 @@ export const signatureStyle = theme => css`
     font-size: 12px;
     line-height: 20px;
     text-align: center;
+
+    & > div:nth-child(3) {
+      margin: 14px 0 0;
+    }
+  }
+
+  @media (min-width: 901px) {
+    & > div:nth-child(3) {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
   }
 `;
