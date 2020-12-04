@@ -35,7 +35,7 @@
     "@emotion/core": "^10.0.27",
     "emotion": "^10.0.27",
     "emotion-theming": "^10.0.27",
-    "niedziele": "^2.1.0",
+    "niedziele": "^2.2.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   }
